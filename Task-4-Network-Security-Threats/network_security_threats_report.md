@@ -1,9 +1,29 @@
 Network Security Threats Report
-1. Introduction
+Table of Contents
 
-In today’s digital world, computer networks form the backbone of communication, business operations, financial transactions, and critical infrastructure. As organizations increasingly rely on interconnected systems, network security threats have become more frequent, sophisticated, and damaging. Network security threats are malicious activities designed to disrupt, monitor, steal, or manipulate data transmitted across networks.
+Introduction
 
-This report focuses on three major and commonly occurring network security threats:
+Denial of Service (DoS) and Distributed Denial of Service (DDoS)
+
+Man-in-the-Middle (MITM) Attacks
+
+Spoofing Attacks
+
+Other Network Threats
+
+Preventive Measures & Best Practices
+
+Future Trends in Network Security
+
+Conclusion
+
+References
+
+Introduction
+
+In the modern digital era, networks are the backbone of communication, finance, healthcare, government, and business operations. While these networks enable efficiency and connectivity, they also expose users and organizations to a wide range of cyber threats. Network security threats are malicious activities targeting the confidentiality, integrity, and availability of data transmitted over networks.
+
+This report explores common network security threats, specifically:
 
 Denial of Service (DoS) and Distributed Denial of Service (DDoS) attacks
 
@@ -11,191 +31,191 @@ Man-in-the-Middle (MITM) attacks
 
 Spoofing attacks
 
-Each threat is explained in detail, including how it works, its impact, real‑world examples, and effective mitigation techniques.
+It also discusses other emerging network threats, preventive measures, real-world case studies, and future trends in network security.
 
-2. Denial of Service (DoS) and Distributed Denial of Service (DDoS) Attacks
-2.1 What is a DoS Attack?
+Denial of Service (DoS) and Distributed Denial of Service (DDoS)
+What is a DoS/DDoS Attack?
 
-A Denial of Service (DoS) attack is a cyberattack in which an attacker attempts to make a system, server, or network unavailable to legitimate users by overwhelming it with excessive traffic, requests, or data. The attacker exploits the limited processing capacity or bandwidth of the target system.
+A Denial of Service (DoS) attack is a cyberattack in which a system, server, or network is flooded with malicious traffic to make it unavailable to legitimate users. A Distributed Denial of Service (DDoS) attack involves multiple compromised systems (botnets) sending coordinated traffic to overwhelm a target.
 
-A Distributed Denial of Service (DDoS) attack is a more powerful version of a DoS attack, where traffic originates from multiple compromised systems (often part of a botnet), making the attack harder to detect and stop.
+How DoS/DDoS Attacks Work
 
-2.2 How DoS/DDoS Attacks Work
+Compromising devices: Attackers infect devices (computers, servers, IoT devices) to form a botnet.
 
-The attacker compromises multiple devices (PCs, servers, IoT devices).
+Target identification: They select a target system or website.
 
-These devices are controlled remotely as a botnet.
+Traffic generation: The botnet sends a massive volume of requests, exhausting bandwidth, CPU, or memory resources.
 
-The botnet sends massive amounts of traffic or requests to a target server.
+System overload: The target server slows down or crashes.
 
-The server becomes overloaded and cannot respond to legitimate users.
+Common Types of DoS/DDoS Attacks
+Attack Type	Description
+SYN Flood	Exploits TCP handshake, leaving connections half-open
+UDP Flood	Sends large numbers of UDP packets to random ports
+ICMP Flood	Overloads network using ping requests
+Amplification	Uses servers (DNS, NTP, Memcached) to amplify traffic
+Impact of DoS/DDoS Attacks
 
-The service crashes or becomes extremely slow.
+Service disruption for legitimate users
 
-Common DoS/DDoS attack types include:
+Financial losses from downtime
 
-Flooding attacks (UDP flood, ICMP flood)
+Reputation damage for organizations
 
-SYN flood attacks
+Operational stress for IT infrastructure
 
-Amplification attacks (DNS, NTP, Memcached)
+For critical systems like hospitals or banks, even short downtime can be catastrophic.
 
-2.3 Impact of DoS/DDoS Attacks
+Real-World Example
 
-Website or service downtime
+GitHub DDoS Attack (2018):
+GitHub was hit with a 1.35 Tbps DDoS attack using a Memcached amplification technique. The attack temporarily disrupted services but was mitigated with cloud-based protection.
 
-Financial losses due to interrupted operations
+Mitigation Techniques
 
-Damage to company reputation
+Deploy firewalls and intrusion prevention systems (IPS)
 
-Loss of customer trust
+Use rate limiting and traffic filtering
 
-Increased infrastructure and recovery costs
-
-For critical services (banks, hospitals, government systems), DoS attacks can have serious real‑world consequences.
-
-2.4 Real‑World Example
-
-GitHub DDoS Attack (2018)
-GitHub experienced one of the largest DDoS attacks ever recorded, peaking at 1.35 terabits per second. The attack used a Memcached amplification technique, exploiting misconfigured servers to generate massive traffic. GitHub mitigated the attack within minutes using automated defenses.
-
-2.5 Mitigation and Prevention
-
-Use firewalls and intrusion prevention systems (IPS)
-
-Implement rate limiting and traffic filtering
-
-Deploy Content Delivery Networks (CDNs)
+Implement Content Delivery Networks (CDNs)
 
 Monitor network traffic continuously
 
-Use cloud‑based DDoS protection services
+Use cloud-based DDoS mitigation services
 
-Keep network devices properly configured
+Keep network devices updated and properly configured
 
-3. Man-in-the-Middle (MITM) Attacks
-3.1 What is a MITM Attack?
+Man-in-the-Middle (MITM) Attacks
+What is a MITM Attack?
 
-A Man-in-the-Middle (MITM) attack occurs when an attacker secretly intercepts communication between two parties who believe they are communicating directly with each other. The attacker can read, modify, or inject data into the communication without detection.
+A Man-in-the-Middle (MITM) attack occurs when an attacker intercepts communication between two parties. They can read, modify, or inject messages without detection. MITM attacks often target unsecured networks like public Wi-Fi.
 
-3.2 How MITM Attacks Work
+How MITM Attacks Work
 
-The attacker positions themselves between the client and the server.
+Positioning: The attacker positions themselves between the client and server.
 
-Traffic passing between the two is intercepted.
+Interception: Traffic is captured and monitored.
 
-Sensitive data such as usernames, passwords, or financial details are captured.
+Data exploitation: Sensitive information such as login credentials or financial data is stolen.
 
-The attacker may alter messages or redirect traffic.
+Message modification: Attackers may alter messages to deceive users.
 
-Common MITM techniques:
+Common Techniques:
 
-ARP spoofing
+ARP Spoofing: Manipulates local network tables to redirect traffic.
 
-DNS spoofing
+DNS Spoofing: Redirects users to fake websites.
 
-HTTPS stripping
+HTTPS Stripping: Downgrades secure HTTPS to HTTP.
 
-Rogue Wi‑Fi access points
+Rogue Wi-Fi Access Points: Users connect unknowingly to malicious networks.
 
-3.3 Impact of MITM Attacks
+Impact
 
-Theft of login credentials
+Data theft, including passwords and financial information
 
 Unauthorized access to systems
 
-Financial fraud
-
-Data manipulation
+Fraud or identity theft
 
 Privacy violations
 
-MITM attacks are especially dangerous on public Wi‑Fi networks.
+Real-World Example
 
-3.4 Real‑World Example
+Firesheep Attack (2010):
+Firesheep was a Firefox plugin that demonstrated how session hijacking could occur on public Wi-Fi networks. Attackers could access user accounts on popular websites using unencrypted HTTP cookies.
 
-Firesheep Attack (2010)
-Firesheep was a browser extension that demonstrated how attackers could hijack user sessions on unsecured Wi‑Fi networks. It exploited unencrypted HTTP cookies, allowing attackers to take control of user accounts on popular websites.
-
-3.5 Mitigation and Prevention
+Mitigation Techniques
 
 Use HTTPS and SSL/TLS encryption
 
-Enable VPNs on public networks
+Implement VPNs on public networks
 
-Avoid unsecured Wi‑Fi networks
+Avoid unsecured Wi-Fi networks
 
-Use strong authentication methods
+Enable strong authentication (2FA/MFA)
 
-Implement certificate validation
+Educate users about safe network practices
 
-Educate users about network security risks
+Spoofing Attacks
+What is Spoofing?
 
-4. Spoofing Attacks
-4.1 What is Spoofing?
+Spoofing attacks involve impersonating a trusted entity to gain unauthorized access, redirect users, or inject malicious content.
 
-Spoofing is a type of attack where an attacker impersonates a trusted entity by falsifying identity information. The goal is to gain unauthorized access, deceive users, or bypass security mechanisms.
+Types of Spoofing Attacks
+Type	Description
+IP Spoofing	Fakes a trusted IP address to bypass security
+Email Spoofing	Sends emails that appear to be from a legitimate sender
+DNS Spoofing	Redirects users to malicious websites
+ARP Spoofing	Associates attacker MAC address with legitimate IP
+Impact
 
-4.2 Types of Spoofing Attacks
-
-IP Spoofing – Faking a trusted IP address
-
-Email Spoofing – Sending emails that appear legitimate
-
-DNS Spoofing – Redirecting users to malicious websites
-
-ARP Spoofing – Associating attacker MAC address with legitimate IP
-
-4.3 Impact of Spoofing Attacks
-
-Phishing and credential theft
+Theft of credentials and sensitive data
 
 Malware distribution
 
 Unauthorized system access
 
-Data breaches
+Compromised network integrity
 
-Loss of user trust
+Real-World Example
 
-4.4 Real‑World Example
+Mirai Botnet (2016):
+Used IP spoofing to launch massive DDoS attacks via IoT devices, affecting major websites and services like Dyn, Twitter, and Netflix.
 
-Mirai Botnet (2016)
-The Mirai malware used spoofed IP addresses to launch massive DDoS attacks using compromised IoT devices. It disrupted major websites and services, including DNS provider Dyn, affecting companies like Twitter and Netflix.
+Mitigation Techniques
 
-4.5 Mitigation and Prevention
+Use authentication protocols and digital signatures
 
-Use authentication protocols
+Enable SPF, DKIM, DMARC for email
 
-Enable SPF, DKIM, and DMARC for email security
+Implement network monitoring and intrusion detection
 
-Implement network monitoring tools
+Keep systems updated with security patches
 
-Use secure DNS configurations
+Other Network Threats
 
-Apply regular system updates and patches
+Phishing attacks: Social engineering to steal credentials
 
-5. General Preventive Measures and Best Practices
+Ransomware via networks: Encrypts files and demands ransom
 
-Strong password policies and multi‑factor authentication (MFA)
+Packet sniffing: Intercepting network traffic to steal data
 
-Network segmentation
+SQL Injection attacks: Exploiting networked web applications
 
-Encryption of data in transit and at rest
+Preventive Measures & Best Practices
 
-Regular security audits
+Strong authentication: Passwords, MFA
 
-Continuous monitoring and logging
+Network segmentation: Limit access to sensitive systems
 
-User awareness and security training
+Encryption: Data in transit and at rest
 
-Incident response planning
+Regular updates: Patch vulnerabilities
 
-6. Conclusion
+Monitoring: Logs, intrusion detection, anomaly detection
 
-Network security threats such as DoS/DDoS attacks, Man‑in‑the‑Middle attacks, and spoofing attacks pose serious risks to modern digital systems. These threats can disrupt services, compromise sensitive data, and cause significant financial and reputational damage. However, by understanding how these attacks work and implementing proper security controls, organizations can significantly reduce their exposure to cyber threats. Continuous monitoring, strong encryption, and user education remain critical components of effective network security.
+User training: Security awareness
 
-7. References
+Incident response planning: Quick recovery from attacks
+
+Future Trends in Network Security
+
+AI-based threat detection: Using machine learning to detect anomalies
+
+Zero Trust Architecture: Trust no device by default
+
+IoT Security: Securing billions of connected devices
+
+Quantum-resistant encryption: Preparing for future quantum computing threats
+
+Cloud Security Evolution: Protecting cloud-hosted networks
+
+Conclusion
+
+Network security threats like DoS/DDoS, MITM, and Spoofing continue to evolve, targeting organizations and individuals. Understanding these threats, their impact, and implementing preventive measures is essential for network safety. Proper planning, monitoring, encryption, and user education are the pillars of modern network security.
+
+References
 
 OWASP Foundation – Network Security Risks
 
@@ -205,4 +225,6 @@ Cloudflare – What is a DDoS Attack?
 
 Krebs on Security – Mirai Botnet Case Study
 
-Symantec – Man‑in‑the‑Middle Attacks Explained
+Symantec – Man-in-the-Middle Attacks Explained
+
+Firesheep Project Documentation (2010)
