@@ -30,5 +30,6 @@ The screenshot folder contains the output of `ufw status` showing active rules.
 - ufw_configuration.sh → Script for firewall setup
 - README.md → This file
 - screenshots/ → Folder containing UFW status image
-- demo_video_link.txt → Link to demo video (optional)
+- demo_video_link.txt
+  
 
