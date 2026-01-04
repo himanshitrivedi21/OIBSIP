@@ -1,157 +1,169 @@
-# Task 5: Social Engineering Attacks Report
+# Task 4: Common Network Security Threats Report
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [What is Social Engineering?](#what-is-social-engineering)
-3. [Types of Social Engineering Attacks](#types-of-social-engineering-attacks)
-   - [Phishing](#phishing)
-   - [Pretexting](#pretexting)
-   - [Baiting](#baiting)
-   - [Tailgating / Piggybacking](#tailgating--piggybacking)
-   - [Quizzes and Surveys](#quizzes-and-surveys)
-4. [Impact of Social Engineering Attacks](#impact-of-social-engineering-attacks)
-5. [Real-World Case Studies](#real-world-case-studies)
-6. [Preventive Measures](#preventive-measures)
-7. [Challenges in Mitigating Social Engineering](#challenges-in-mitigating-social-engineering)
-8. [Conclusion](#conclusion)
-9. [References](#references)
+2. [Types of Network Security Threats](#types-of-network-security-threats)
+   - [Denial of Service (DoS) and Distributed DoS (DDoS)](#denial-of-service-dos-and-distributed-dos-ddos)
+   - [Man-in-the-Middle (MITM) Attacks](#man-in-the-middle-mitm-attacks)
+   - [Spoofing](#spoofing)
+   - [Packet Sniffing / Eavesdropping](#packet-sniffing--eavesdropping)
+   - [DNS Spoofing / Poisoning](#dns-spoofing--poisoning)
+3. [Impact of Network Security Threats](#impact-of-network-security-threats)
+4. [Real-World Examples](#real-world-examples)
+5. [Mitigation and Preventive Measures](#mitigation-and-preventive-measures)
+6. [Best Practices for Organizations](#best-practices-for-organizations)
+7. [Conclusion](#conclusion)
+8. [References](#references)
 
 ---
 
 ## Introduction
 
-Social engineering is a form of cyberattack where attackers manipulate human psychology to gain unauthorized access to systems, data, or physical locations. Unlike traditional cyberattacks that exploit software vulnerabilities, social engineering **targets human behavior**, taking advantage of trust, curiosity, fear, or lack of awareness.  
+In today’s highly connected world, network security is critical to protect sensitive information and ensure business continuity. Networks are constantly targeted by cyber attackers attempting to exploit vulnerabilities in systems, protocols, or human error.  
 
-These attacks are highly effective because humans are often the **weakest link in cybersecurity**. Even the most secure systems can be breached if employees are tricked into revealing passwords, clicking malicious links, or bypassing security procedures.
-
-This report provides an in-depth analysis of social engineering attacks, their types, real-world examples, impacts, and preventive measures.
+Network security threats can disrupt services, compromise confidential data, damage reputations, and cause financial loss. This report highlights the **most common network security threats**, their impact, real-world examples, and preventive measures that organizations can adopt.
 
 ---
 
-## What is Social Engineering?
+## Types of Network Security Threats
 
-Social engineering is the art of **deception and manipulation**. Attackers leverage psychological tactics to convince individuals to perform actions that compromise security.  
+### Denial of Service (DoS) and Distributed DoS (DDoS)
 
-Common tactics include:  
-- Impersonation of trusted personnel or institutions  
-- Exploiting urgency or fear  
-- Offering rewards or incentives  
-- Gaining trust through fake relationships or pretexts  
+A **DoS attack** occurs when attackers flood a network, server, or service with excessive traffic, making it unavailable to legitimate users.  
 
-Unlike malware or hacking tools, social engineering **relies on human error rather than technical flaws**, making awareness and training critical defenses.
+- **DDoS** is a larger-scale attack using multiple compromised systems to amplify the traffic.  
+- **Impact:** Service downtime, loss of revenue, disruption of operations.  
+- **Real-world example:** GitHub DDoS attack (2018) — 1.35 Tbps traffic caused temporary outages.  
 
----
-
-## Types of Social Engineering Attacks
-
-### Phishing
-Phishing is one of the most common social engineering techniques. Attackers send emails, messages, or calls pretending to be legitimate organizations (banks, tech companies, government agencies) to trick victims into revealing credentials or clicking malicious links.  
-
-- **Example:** An email claiming to be from a bank asking the user to “verify your account”  
-- **Impact:** Credential theft, unauthorized transactions, malware infections  
-
-**Subtypes:**  
-- **Spear phishing:** Targeted attacks on specific individuals or organizations  
-- **Whaling:** Targeting high-profile executives  
-- **Smishing / Vishing:** SMS or voice phishing  
+**Mitigation:**  
+- Deploy firewalls and intrusion detection systems (IDS)  
+- Use DDoS protection services (Cloudflare, AWS Shield)  
+- Rate limiting and traffic filtering  
 
 ---
 
-### Pretexting
-Pretexting involves attackers creating a fabricated scenario (pretext) to convince someone to disclose confidential information.  
+### Man-in-the-Middle (MITM) Attacks
 
-- **Example:** A person pretending to be an IT support staff calls employees to “reset passwords.”  
-- **Impact:** Unauthorized access to sensitive information  
+In a **MITM attack**, the attacker secretly intercepts and possibly alters communication between two parties.  
 
----
+- **Example:** Intercepting login credentials over an unsecured Wi-Fi network.  
+- **Impact:** Data theft, unauthorized access, eavesdropping.  
 
-### Baiting
-Baiting uses **incentives or promises of rewards** to trick victims into performing unsafe actions.  
-
-- **Example:** Leaving a USB drive labeled “Confidential Salary Info” in an office. An employee picks it up and plugs it into their computer, infecting the system with malware.  
-- **Impact:** Malware infection, data theft, network compromise  
+**Mitigation:**  
+- Use end-to-end encryption (HTTPS, VPNs, TLS)  
+- Avoid public Wi-Fi for sensitive communications  
+- Implement secure authentication protocols  
 
 ---
 
-### Tailgating / Piggybacking
-Attackers gain **physical access to secure areas** by following authorized personnel without permission.  
+### Spoofing
 
-- **Example:** Following someone through a secure door or pretending to be a delivery person.  
-- **Impact:** Physical breaches, access to systems or confidential areas  
+**Spoofing** involves falsifying data to appear as a trusted source. Types include:  
 
----
+- **IP Spoofing:** Pretending to be a trusted IP address  
+- **Email Spoofing:** Sending emails from fake addresses to trick users  
+- **MAC Spoofing:** Altering a device’s MAC address to bypass network restrictions  
 
-### Quizzes and Surveys
-Attackers can use quizzes, surveys, or fake competitions to **collect personal information**. Even seemingly harmless data can be used to guess passwords or security questions.  
+**Impact:** Unauthorized access, phishing attacks, network breaches  
 
----
-
-## Impact of Social Engineering Attacks
-
-Social engineering attacks can have severe consequences:  
-
-- **Financial Loss:** Fraudulent transactions, ransomware payments, or stolen intellectual property  
-- **Data Breach:** Exposure of sensitive customer or employee information  
-- **Reputational Damage:** Loss of trust from customers or partners  
-- **Operational Disruption:** Downtime caused by compromised systems or networks  
-
-Even a single employee mistake can lead to catastrophic consequences.
+**Mitigation:**  
+- Implement authentication and verification checks  
+- Monitor logs for unusual activity  
+- Use anti-spoofing tools (e.g., ARP inspection, SPF/DKIM for emails)  
 
 ---
 
-## Real-World Case Studies
+### Packet Sniffing / Eavesdropping
 
-### 1. Twitter Bitcoin Scam (2020)
-- Hackers tricked employees into giving access to internal systems via **spear phishing**.  
-- Result: High-profile Twitter accounts were used to solicit Bitcoin donations.  
-- Lesson: Even social media platforms are vulnerable to human manipulation.
+Packet sniffing is the process of **intercepting network packets** to capture sensitive data. Attackers use this method to steal credentials, financial data, or confidential communications.  
 
-### 2. RSA Security Breach (2011)
-- Attackers sent phishing emails with a malicious Excel attachment.  
-- Result: Sensitive data about RSA SecurID tokens was stolen, compromising secure authentication systems.  
-
-### 3. Sony Pictures Hack (2014)
-- Attackers used **spear phishing and pretexting** to gain access to company networks.  
-- Result: Massive data leak, operational disruption, and reputational damage.  
+- **Impact:** Data breaches, credential theft, unauthorized access  
+- **Mitigation:**  
+  - Use encrypted protocols (HTTPS, SSH)  
+  - Enable strong Wi-Fi security (WPA3)  
+  - Use VPNs for remote connections  
 
 ---
 
-## Preventive Measures
+### DNS Spoofing / Poisoning
 
-1. **Employee Awareness and Training:** Conduct regular security training to identify phishing, pretexting, and baiting.  
-2. **Strong Authentication:** Use multi-factor authentication (MFA) to prevent stolen credentials from being misused.  
-3. **Email Filtering and Anti-Phishing Tools:** Implement spam filters, URL scanners, and email authentication (SPF, DKIM, DMARC).  
-4. **Policy Enforcement:** Establish strict procedures for sharing information and accessing systems.  
-5. **Simulated Attacks:** Conduct social engineering simulations to test employee readiness.  
-6. **Reporting Mechanisms:** Encourage employees to report suspicious activities without fear.  
+DNS spoofing manipulates the **Domain Name System** to redirect users to malicious websites.  
+
+- **Example:** Redirecting traffic from a bank website to a fake login page to steal credentials.  
+- **Impact:** Credential theft, malware infection, phishing attacks  
+- **Mitigation:**  
+  - Implement DNSSEC (Domain Name System Security Extensions)  
+  - Monitor DNS traffic for anomalies  
+  - Use trusted DNS providers  
 
 ---
 
-## Challenges in Mitigating Social Engineering
+## Impact of Network Security Threats
 
-- Attackers continuously **adapt techniques** to bypass awareness training.  
-- High employee turnover makes consistent training difficult.  
-- Phishing emails are becoming **highly targeted and realistic**.  
-- Remote work increases attack surfaces, as employees may not follow office security protocols.  
+Network attacks can result in:  
+
+- **Financial Loss:** Downtime, ransomware, fraud  
+- **Data Breaches:** Exposure of sensitive customer or employee data  
+- **Operational Disruption:** Interruption of critical business processes  
+- **Reputational Damage:** Loss of customer trust and brand credibility  
+- **Legal Penalties:** Non-compliance with data protection laws (e.g., GDPR, HIPAA)  
+
+---
+
+## Real-World Examples
+
+1. **Dyn DDoS Attack (2016)**  
+   - Mirai botnet targeted Dyn’s DNS servers, causing major internet outages for sites like Twitter and Netflix.  
+
+2. **Equifax Data Breach (2017)**  
+   - Attackers exploited unpatched systems (network vulnerability), compromising 147 million records.  
+
+3. **Comcast MITM Attack Simulation (2019)**  
+   - Security researchers demonstrated how unsecured Wi-Fi could be intercepted, highlighting MITM risks.  
+
+4. **DNS Spoofing Case**  
+   - Attackers redirected users of banking websites to malicious clones, stealing login credentials.  
+
+---
+
+## Mitigation and Preventive Measures
+
+To defend against network threats:  
+
+- **Firewalls and IDS/IPS:** Monitor and filter network traffic  
+- **Encryption:** Protect data in transit and at rest  
+- **Access Control:** Limit network access to authorized users  
+- **Regular Updates:** Patch vulnerabilities promptly  
+- **Network Segmentation:** Isolate critical systems from general network  
+- **Employee Training:** Educate staff on phishing and spoofing risks  
+
+---
+
+## Best Practices for Organizations
+
+- Conduct regular **network vulnerability assessments**  
+- Implement **multi-layered security controls**  
+- Monitor and log all network activities  
+- Use **strong authentication** methods (MFA, certificates)  
+- Develop an **incident response plan** for network attacks  
+- Periodically test systems with **penetration testing**  
 
 ---
 
 ## Conclusion
 
-Social engineering attacks are **a major threat to organizational cybersecurity**. Unlike technical attacks, these rely on **human psychology and behavior**.  
+Network security threats are evolving rapidly, targeting both technology and human behavior. Denial of Service, MITM, spoofing, and DNS attacks can disrupt operations, cause financial loss, and damage reputations.  
 
-Organizations must implement a combination of **employee awareness, strong authentication, policies, and monitoring** to prevent attacks. Real-world examples show that even large organizations can fall victim if human error is exploited.  
-
-Regular training, simulations, and reporting can significantly reduce risk and strengthen the human element of cybersecurity.
+Organizations must adopt a combination of **technical controls, employee awareness, and proactive monitoring** to mitigate these threats effectively. A strong network security posture ensures data confidentiality, integrity, and availability.
 
 ---
 
 ## References
 
-1. Mitnick, K. & Simon, W. (2002). *The Art of Deception: Controlling the Human Element of Security*. Wiley.  
-2. Verizon Data Breach Investigations Report (DBIR) 2022  
-3. CISA – Social Engineering Threats and Guidance  
-4. Krebs, B. (2020). Twitter Bitcoin Scam Case Study  
-5. RSA Security Breach Reports 2011  
-6. Symantec Security Reports – Social Engineering Trends  
-
+1. Stallings, W. (2018). *Network Security Essentials: Applications and Standards.*  
+2. CISA – Network Security Best Practices  
+3. Verizon Data Breach Investigations Report (DBIR) 2022  
+4. Dyn DDoS Attack Report (2016)  
+5. Equifax Data Breach Analysis (2017)  
+6. OWASP – Network Security Threats Guide  
+7. Cisco – Network Security Best Practices  
